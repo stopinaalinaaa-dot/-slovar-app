@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f7f7fb">
+<title>Словарь — личный тренажёр</title>
+<style>
+:root{--bg:#f7f7fb;--paper:#fff;--ink:#202238;--muted:#777b91;--line:#e9eaf2;--purple:#6558d3;--pale:#f0efff;--green:#16845b;--greenbg:#e8f7ef;--red:#bd4d57;--redbg:#fff0f0;--amber:#9b6a13;--amberbg:#fff6df;--shadow:0 12px 35px #26244a0a}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif}button,input,textarea,select{font:inherit}button{cursor:pointer}.shell{max-width:980px;margin:auto;padding:0 18px}.top{padding:24px 0 14px}.brand{display:flex;align-items:center;gap:12px}.logo{width:42px;height:42px;border-radius:14px;background:var(--purple);color:white;display:grid;place-items:center;font-size:21px;font-weight:800}.brand h1{font-size:21px;line-height:1.1;margin:0}.brand p{margin:4px 0 0;color:var(--muted);font-size:12px}.nav{display:flex;gap:7px;overflow:auto;padding:17px 0 3px}.nav button{border:0;background:transparent;color:var(--muted);padding:9px 13px;border-radius:11px;white-space:nowrap;font-weight:650}.nav button.active{background:var(--pale);color:var(--purple)}main{padding:12px 0 50px}.view{display:none}.view.active{display:block}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.metric,.panel{background:var(--paper);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow)}.metric{padding:16px}.metric strong{font-size:27px;display:block;letter-spacing:-1px}.metric span{font-size:12px;color:var(--muted)}.panel{padding:20px;margin-top:14px}.section-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px}.section-head h2{margin:0;font-size:18px}.sub{color:var(--muted);font-size:13px}.progress{height:7px;background:#eeeef5;border-radius:20px;overflow:hidden;margin:14px 0}.progress div{height:100%;width:0;background:var(--purple);transition:width .2s}.study-meta{display:flex;justify-content:space-between;color:var(--muted);font-size:12px}.flash{min-height:290px;display:flex;align-items:center;justify-content:center;text-align:center;flex-direction:column;padding:30px 20px;cursor:pointer;user-select:none;border:1px solid var(--line);border-radius:20px;background:linear-gradient(160deg,#fff,#fcfbff);box-shadow:var(--shadow);margin-top:12px}.tag{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.12em}.word{font-size:clamp(30px,7vw,45px);font-weight:780;letter-spacing:-1.5px;margin:20px 0 8px;overflow-wrap:anywhere}.translation{font-size:22px;font-weight:650;margin:8px 0}.example{max-width:560px;margin:14px auto 0;color:#656981}.example em{font-style:normal;color:var(--purple);font-weight:700}.tap{font-size:12px;color:var(--muted);margin-top:22px}.controls{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-top:12px}.rate{border:0;border-radius:13px;padding:13px 8px;font-weight:750}.rate small{display:block;font-size:11px;font-weight:500;opacity:.8;margin-top:2px}.again{background:var(--redbg);color:var(--red)}.hard{background:var(--amberbg);color:var(--amber)}.good{background:var(--greenbg);color:var(--green)}.easy{background:#eaf1ff;color:#365eae}.primary{background:var(--purple);color:#fff;border:0;border-radius:12px;padding:11px 16px;font-weight:700}.soft{background:var(--pale);color:var(--purple);border:0;border-radius:11px;padding:10px 13px;font-weight:650}.plain{background:#f1f1f6;color:var(--ink);border:0;border-radius:11px;padding:10px 13px;font-weight:650}.smallbtn{padding:7px 10px;font-size:12px}.row{display:flex;gap:9px;align-items:center;flex-wrap:wrap}.row>*{min-width:0}.field{width:100%;border:1px solid var(--line);border-radius:11px;background:white;padding:12px;color:var(--ink);outline:none}.field:focus{border-color:var(--purple);box-shadow:0 0 0 3px #6558d31a}textarea.field{min-height:180px;resize:vertical}label{display:block;font-size:13px;font-weight:700;margin:13px 0 6px}.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}.list{display:grid;gap:8px}.item{border:1px solid var(--line);border-radius:13px;padding:12px;display:flex;align-items:center;justify-content:space-between;gap:12px;background:#fff}.item b{display:block}.item small{color:var(--muted)}.item-actions{display:flex;gap:6px}.pill{font-size:11px;padding:4px 8px;border-radius:20px;background:#f1f1f6;color:var(--muted)}.notice{padding:12px;background:#fff8e6;color:#795b17;border-radius:12px;font-size:12px;margin-top:12px}.empty{text-align:center;padding:28px;color:var(--muted)}.hide{display:none!important}.chartbar{height:9px;border-radius:20px;background:#eeeef5;overflow:hidden}.chartbar span{height:100%;display:block;background:var(--purple)}.footer{text-align:center;color:var(--muted);font-size:12px;padding:0 18px 25px}
+@media(max-width:620px){.shell{padding:0 13px}.top{padding-top:18px}.grid{gap:7px}.metric{padding:12px}.metric strong{font-size:22px}.metric span{font-size:11px}.panel{padding:15px}.controls{grid-template-columns:1fr 1fr}.flash{min-height:260px}.two{grid-template-columns:1fr}.section-head{align-items:flex-start}}
+</style>
+</head>
+<body>
+<div class="shell">
+<header class="top">
+ <div class="brand"><div class="logo">A</div><div><h1>Словарь</h1><p>Твой спокойный и умный тренажёр слов</p></div></div>
+ <nav class="nav">
+  <button class="active" data-view="home">Учить</button><button data-view="sets">Наборы</button><button data-view="add">Импорт</button><button data-view="stats">Прогресс</button><button data-view="settings">Настройки</button>
+ </nav>
+</header>
+<main>
+<section class="view active" id="home">
+ <div class="grid">
+  <div class="metric"><strong id="dueNum">0</strong><span>Пора повторить</span></div>
+  <div class="metric"><strong id="newNum">0</strong><span>Новые слова</span></div>
+  <div class="metric"><strong id="knownNum">0</strong><span>Уверенно знаю</span></div>
+ </div>
+ <div class="panel">
+  <div class="section-head"><div><h2>Твоя учёба сегодня</h2><div class="sub" id="todayLine">Небольшие шаги каждый день</div></div><span class="pill" id="deckLabel">Все наборы</span></div>
+  <div class="progress"><div id="dailyProgress"></div></div>
+  <div class="study-meta"><span id="progressText">0 из 0 повторено сегодня</span><span id="percentText">0%</span></div>
+ </div>
+ <div class="study-meta" style="margin:20px 2px 0"><span id="modeLabel">Английский → русский</span><span id="cardPosition"></span></div>
+ <div class="flash" id="flash">
+  <div class="tag" id="cardTag">Сначала вспомни ответ</div>
+  <div class="word" id="front">Готова начать?</div>
+  <div class="translation hide" id="back"></div>
+  <div class="example hide" id="example"></div>
+  <div class="tap" id="tapHint">Нажми на карточку, чтобы открыть ответ</div>
+ </div>
+ <div class="controls" id="ratings">
+  <button class="rate again" data-rate="again" disabled>Не помню<small>вернуть скоро</small></button>
+  <button class="rate hard" data-rate="hard" disabled>Трудно<small>короткий интервал</small></button>
+  <button class="rate good" data-rate="good" disabled>Хорошо<small>увеличить интервал</small></button>
+  <button class="rate easy" data-rate="easy" disabled>Легко<small>длинный интервал</small></button>
+ </div>
+ <div class="row" style="justify-content:center;margin-top:12px"><button class="soft" id="reverseBtn">↔ Сменить направление</button><button class="plain" id="skipBtn">Пропустить</button></div>
+ <p class="sub" style="text-align:center;margin-top:12px">Сначала попробуй вспомнить сама. Если ответ не пришёл — это нормально: отметь «Не помню».</p>
+</section>
+<section class="view" id="sets">
+ <div class="panel"><div class="section-head"><div><h2>Мои наборы</h2><div class="sub">Разделяй слова по предметам и темам</div></div><button class="primary" id="newSetBtn">+ Набор</button></div><div id="setList" class="list"></div></div>
+ <div class="panel"><h2 style="margin-top:0">Выбранный набор</h2><p class="sub">Нажми на набор, чтобы учить только его. Выбери «Все наборы», чтобы смешивать слова.</p><button class="soft" id="allSets">Все наборы</button></div>
+</section>
+<section class="view" id="add">
+ <div class="panel"><h2 style="margin:0">Быстрый импорт</h2><p class="sub">Вставь список из таблицы, документа или заметок. Одна карточка на строку.</p>
+  <label for="setSelect">Добавить в набор</label><select class="field" id="setSelect"></select>
+  <label for="bulk">Термин [TAB] перевод</label><textarea class="field" id="bulk" placeholder="set up&#9;создать, основать&#10;fill in&#9;заполнять форму"></textarea>
+  <div class="row" style="margin-top:10px"><button class="primary" id="importBtn">Импортировать карточки</button><button class="plain" id="sampleBtn">Пример</button></div><p class="sub" id="importMsg"></p>
+  <div class="notice">Поддерживаются разделители: табуляция, точка с запятой или символ |. Повторяющиеся карточки можно пропустить при импорте.</div>
+ </div>
+ <div class="panel"><h2 style="margin:0">Добавить одно слово</h2><div class="two"><div><label for="oneFront">Термин / вопрос</label><input class="field" id="oneFront" placeholder="take over"></div><div><label for="oneBack">Перевод / ответ</label><input class="field" id="oneBack" placeholder="взять под контроль"></div></div><label for="oneExample">Пример (необязательно)</label><input class="field" id="oneExample" placeholder="The new manager will take over."><button class="primary" id="addOne" style="margin-top:12px">Добавить слово</button></div>
+ <div class="panel"><h2 style="margin:0">Резервная копия</h2><p class="sub">Скачай все наборы и карточки в файл JSON. Его можно импортировать обратно на другом устройстве.</p><div class="row"><button class="soft" id="backupBtn">Скачать резервную копию</button><label class="plain" style="margin:0;cursor:pointer">Загрузить копию<input type="file" id="restoreFile" accept=".json,application/json" hidden></label></div></div>
+</section>
+<section class="view" id="stats">
+ <div class="panel"><h2 style="margin:0 0 14px">Твой прогресс</h2><div class="grid"><div><strong id="sTotal">0</strong><div class="sub">Всего карточек</div></div><div><strong id="sLearned">0</strong><div class="sub">Изучаются</div></div><div><strong id="sMastered">0</strong><div class="sub">Освоены</div></div></div><div style="margin-top:20px"><div class="section-head"><b>Состояние слов</b><span class="sub" id="masterPct"></span></div><div class="chartbar"><span id="masterBar" style="width:0"></span></div></div></div>
+ <div class="panel"><h2 style="margin:0 0 12px">Что повторить</h2><div id="weakList" class="list"></div></div>
+ <div class="panel"><h2 style="margin:0 0 12px">Последние 7 дней</h2><div id="weekStats" class="list"></div></div>
+</section>
+<section class="view" id="settings">
+ <div class="panel"><h2 style="margin:0">Ежедневная цель</h2><p class="sub">Выбери, сколько новых слов добавлять в учёбу за день.</p><label for="dailyNew">Новых слов в день</label><select class="field" id="dailyNew"><option>5</option><option selected>10</option><option>15</option><option>20</option><option>30</option></select>
+ <label for="remTime">Время напоминания</label><input class="field" type="time" id="remTime" value="19:00"><div class="row" style="margin-top:12px"><button class="primary" id="notifyBtn">Включить уведомления</button><button class="soft" id="saveSettings">Сохранить</button></div><p class="sub" id="notifyMsg"></p>
+ <div class="notice">Напоминание в этой автономной версии срабатывает, пока страница открыта. Для уведомлений, когда браузер закрыт, понадобится разместить сайт в интернете и подключить push-уведомления.</div></div>
+ <div class="panel"><h2 style="margin:0">Как работает интервальное повторение</h2><p class="sub">Алгоритм начинает с коротких интервалов и увеличивает их, когда ты вспоминаешь слово. Ошибки возвращают слово в ближайшую очередь. Это адаптивная стартовая схема, а не обещание, что слово окончательно выучено.</p><button class="plain" id="resetProgress">Сбросить историю повторений</button></div>
+</section>
+</main></div>
+<div class="footer">Словарь · твои слова, твой темп · данные хранятся в браузере</div>
+<script>
+const STORE='slovar_app_v2';
+const starter=[['set up','создать, основать компанию','They set up a small business.'],['fill in','заполнять форму или заявление','Please fill in this form.'],['turn someone down','отказать кому-либо','They turned her down for the job.'],['keep at something','продолжать заниматься чем-либо, не сдаваться','Keep at it and you will improve.'],['put someone off','отбить желание, отпугнуть','The high price put me off.'],['take over','взять под контроль, перенять управление','She will take over the project.'],['work on','работать над чем-либо','I am working on my English.'],['keep up with','не отставать от, поспевать за','It is hard to keep up with the class.'],['get ahead','добиваться успеха, продвигаться вперёд','She studies hard to get ahead.'],['put something off','откладывать что-либо на потом','Do not put off your homework.'],['take control of','взять под контроль','He took control of the situation.'],['turn something down','отклонить предложение','She turned down the offer.'],['lay someone off','уволить из-за сокращения штата','The company had to lay off workers.'],['put something forward','предложить идею или план','He put forward a new idea.'],['get through','справиться, закончить разбирать или выполнять','We got through all the exercises.'],['come up with','придумать, предложить идею','Can you come up with a solution?']];
+const now=()=>Date.now(), day=86400000, $=id=>document.getElementById(id);
+let state=JSON.parse(localStorage.getItem(STORE)||'null');
+if(!state){state={sets:[{id:'work',name:'English · Work'}],cards:starter.map((x,i)=>({id:'c'+i,set:'work',front:x[0],back:x[1],example:x[2],due:now(),step:0,seen:0,correct:0,wrong:0,new:true})),reviews:[],settings:{dailyNew:10,remTime:'19:00'}}}
+state.settings ||= {dailyNew:10,remTime:'19:00'};state.reviews ||= [];state.sets ||= [];state.cards ||= [];
+let activeSet='all',current=null,revealed=false,reverse=false,notifyTimer=null;
+function save(){localStorage.setItem(STORE,JSON.stringify(state))}
+function dueCards(){return state.cards.filter(c=>(activeSet==='all'||c.set===activeSet)&&c.due<=now()).filter(c=>!c.new||newTodayCount()<Number(state.settings.dailyNew))}
+function newTodayCount(){let d=new Date().toDateString();return state.reviews.filter(r=>new Date(r.at).toDateString()===d&&r.wasNew).length}
+function getNew(){return state.cards.filter(c=>(activeSet==='all'||c.set===activeSet)&&c.new).sort((a,b)=>a.id.localeCompare(b.id))}
+function updateTop(){let pool=state.cards.filter(c=>activeSet==='all'||c.set===activeSet);$('dueNum').textContent=pool.filter(c=>!c.new&&c.due<=now()).length;$('newNum').textContent=Math.min(getNew().length,Math.max(0,Number(state.settings.dailyNew)-newTodayCount()));$('knownNum').textContent=pool.filter(c=>c.step>=4).length;$('deckLabel').textContent=activeSet==='all'?'Все наборы':(state.sets.find(s=>s.id===activeSet)?.name||'Набор');let done=state.reviews.filter(r=>new Date(r.at).toDateString()===new Date().toDateString()).length;$('progressText').textContent=done+' повторений сегодня';$('percentText').textContent=(pool.length?Math.round(100*pool.filter(c=>c.step>=4).length/pool.length):0)+'% освоено';$('dailyProgress').style.width=Math.min(100,done/Math.max(1,Number(state.settings.dailyNew))*100)+'%'}
+function queue(){let due=dueCards();if(due.length)return due.sort((a,b)=>a.due-b.due)[0];let fresh=getNew();return fresh.length&&newTodayCount()<Number(state.settings.dailyNew)?fresh[0]:null}
+function renderCard(){updateTop();current=queue();revealed=false;['again','hard','good','easy'].forEach(k=>document.querySelector(`[data-rate="${k}"]`).disabled=true);$('back').classList.add('hide');$('example').classList.add('hide');$('tapHint').textContent='Нажми на карточку, чтобы открыть ответ';
+if(!current){$('front').textContent=state.cards.length?'На сегодня всё! ✨':'Добавь первые слова';$('cardTag').textContent='Отличная работа';$('tapHint').textContent=state.cards.length?'Возвращайся, когда появятся новые повторения.':'Открой вкладку «Импорт», чтобы добавить карточки.';$('cardPosition').textContent='';return}
+$('cardTag').textContent=current.new?'Новое слово':'Повторение';$('front').textContent=reverse?current.back:current.front;$('back').textContent=reverse?current.front:current.back;$('example').textContent=current.example||'';$('cardPosition').textContent=dueCards().length+' к повторению';$('modeLabel').textContent=reverse?'Русский → английский':'Английский → русский'}
+function reveal(){if(!current||revealed)return;revealed=true;$('back').classList.remove('hide');if(current.example){$('example').classList.remove('hide');$('example').innerHTML='Пример: '+escapeHtml(current.example)}$('tapHint').textContent='Оцени, насколько легко вспомнила';['again','hard','good','easy'].forEach(k=>document.querySelector(`[data-rate="${k}"]`).disabled=false)}
+function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function rate(kind){if(!current||!revealed)return;let c=current,wasNew=c.new;c.seen++;let minutes=10,interval=0;
+if(kind==='again'){c.wrong++;c.step=0;minutes=10;c.due=now()+minutes*60000}
+else{c.correct++;c.new=false;let base=[1,3,7,14,30,60];let factor={hard:.65,good:1,easy:1.7}[kind];let idx=Math.max(0,Math.min(c.step,base.length-1));interval=Math.max(1,Math.round(base[idx]*factor));c.step=Math.min(c.step+1,base.length-1);c.due=now()+interval*day}
+state.reviews.push({id:c.id,at:now(),kind,wasNew});save();renderCard();renderStats()}
+function switchView(v){document.querySelectorAll('.view').forEach(x=>x.classList.toggle('active',x.id===v));document.querySelectorAll('.nav button').forEach(x=>x.classList.toggle('active',x.dataset.view===v));if(v==='sets')renderSets();if(v==='add')fillSetSelect();if(v==='stats')renderStats();if(v==='home')renderCard()}
+document.querySelectorAll('.nav button').forEach(b=>b.onclick=()=>switchView(b.dataset.view));
+$('flash').onclick=reveal;$('flash').onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();reveal()}};
+document.querySelectorAll('[data-rate]').forEach(b=>b.onclick=()=>rate(b.dataset.rate));
+$('reverseBtn').onclick=()=>{reverse=!reverse;renderCard()};$('skipBtn').onclick=()=>{if(current){current.due=now()+60000;save();renderCard()}};
+function renderSets(){let list=$('setList');list.innerHTML='';state.sets.forEach(s=>{let count=state.cards.filter(c=>c.set===s.id).length,el=document.createElement('div');el.className='item';let info=document.createElement('div');info.innerHTML='<b>'+escapeHtml(s.name)+'</b><small>'+count+' карточек</small>';let b=document.createElement('button');b.className='soft smallbtn';b.textContent=activeSet===s.id?'Выбран':'Учить набор';b.onclick=()=>{activeSet=s.id;switchView('home')};el.append(info,b);list.append(el)});if(!state.sets.length)list.innerHTML='<div class="empty">Пока нет наборов.</div>'}
+$('allSets').onclick=()=>{activeSet='all';switchView('home')};
+$('newSetBtn').onclick=()=>{let n=prompt('Название набора:');if(n&&n.trim()){let id='s'+Date.now();state.sets.push({id,name:n.trim()});save();renderSets()}};
+function fillSetSelect(){$('setSelect').innerHTML=state.sets.map(s=>`<option value="${s.id}">${escapeHtml(s.name)}</option>`).join('')}
+function parseImport(txt){return txt.split(/\r?\n/).map(x=>x.trim()).filter(Boolean).map(line=>{let p=line.includes('\t')?line.split('\t'):line.includes('|')?line.split('|'):line.split(';');return [p.shift()?.trim(),p.join(' ').trim()] }).filter(x=>x[0]&&x[1])}
+$('sampleBtn').onclick=()=>{$('bulk').value='set up\tсоздать, основать компанию\nfill in\tзаполнять форму или заявление\ncome up with\tпридумать, предложить идею'};
+$('importBtn').onclick=()=>{let rows=parseImport($('bulk').value),set=$('setSelect').value;if(!rows.length){$('importMsg').textContent='Не нашла пары «термин — перевод». Проверь формат.';return}let added=0,skipped=0;rows.forEach(([f,b])=>{if(state.cards.some(c=>c.set===set&&c.front.toLowerCase()===f.toLowerCase())){skipped++;return}state.cards.push({id:'c'+Date.now()+Math.random(),set,front:f,back:b,example:'',due:now(),step:0,seen:0,correct:0,wrong:0,new:true});added++});save();$('bulk').value='';$('importMsg').textContent=`Добавлено: ${added}. Пропущено повторов: ${skipped}.`;renderCard()};
+$('addOne').onclick=()=>{let f=$('oneFront').value.trim(),b=$('oneBack').value.trim();if(!f||!b){alert('Заполни термин и перевод.');return}state.cards.push({id:'c'+Date.now(),set:$('setSelect').value||state.sets[0]?.id,front:f,back:b,example:$('oneExample').value.trim(),due:now(),step:0,seen:0,correct:0,wrong:0,new:true});['oneFront','oneBack','oneExample'].forEach(id=>$(id).value='');save();renderCard();alert('Карточка добавлена')};
+$('backupBtn').onclick=()=>download('slovar-backup.json',JSON.stringify(state,null,2),'application/json');
+function download(name,data,type){let a=document.createElement('a'),u=URL.createObjectURL(new Blob([data],{type}));a.href=u;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(u),1000)}
+$('restoreFile').onchange=async e=>{try{let obj=JSON.parse(await e.target.files[0].text());if(!obj.cards||!obj.sets)throw Error();if(confirm('Заменить текущие наборы и карточки данными из файла?')){state=obj;save();renderCard();alert('Копия восстановлена')}}catch(err){alert('Не удалось прочитать резервную копию.')}e.target.value=''};
+function renderStats(){let total=state.cards.length,master=state.cards.filter(c=>c.step>=4).length,learn=state.cards.filter(c=>c.step>0&&c.step<4).length;$('sTotal').textContent=total;$('sLearned').textContent=learn;$('sMastered').textContent=master;$('masterPct').textContent=(total?Math.round(master/total*100):0)+'%';$('masterBar').style.width=(total?master/total*100:0)+'%';let weak=state.cards.slice().sort((a,b)=>b.wrong-a.wrong).filter(c=>c.wrong).slice(0,6);$('weakList').innerHTML=weak.length?weak.map(c=>`<div class="item"><div><b>${escapeHtml(c.front)}</b><small>${c.wrong} ошибок · ${escapeHtml(c.back)}</small></div><span class="pill">повторить</span></div>`).join(''):'<div class="empty">Ошибок пока нет. Продолжай учиться!</div>';let days=[];for(let i=6;i>=0;i--){let d=new Date();d.setDate(d.getDate()-i);let count=state.reviews.filter(r=>new Date(r.at).toDateString()===d.toDateString()).length;days.push(`<div class="item"><b>${d.toLocaleDateString('ru-RU',{weekday:'short',day:'numeric'})}</b><span class="pill">${count} повторений</span></div>`)}$('weekStats').innerHTML=days.join('')}
+$('dailyNew').value=state.settings.dailyNew;$('remTime').value=state.settings.remTime;
+$('saveSettings').onclick=()=>{state.settings.dailyNew=Number($('dailyNew').value);state.settings.remTime=$('remTime').value;save();$('notifyMsg').textContent='Настройки сохранены.';renderCard();scheduleReminder()};
+$('notifyBtn').onclick=async()=>{if(!('Notification'in window)){$('notifyMsg').textContent='Браузер не поддерживает уведомления.';return}let p=await Notification.requestPermission();$('notifyMsg').textContent=p==='granted'?'Разрешение получено. Оставляй страницу открытой для напоминания.':'Уведомления не разрешены.';scheduleReminder()};
+function scheduleReminder(){if(notifyTimer)clearTimeout(notifyTimer);if(!('Notification'in window)||Notification.permission!=='granted')return;let [h,m]=state.settings.remTime.split(':').map(Number),d=new Date();d.setHours(h,m,0,0);if(d<=new Date())d.setDate(d.getDate()+1);notifyTimer=setTimeout(()=>{if(dueCards().length||getNew().length)new Notification('Пора повторить слова',{body:'Твои карточки ждут тебя в Словаре.'});scheduleReminder()},d-new Date())}
+$('resetProgress').onclick=()=>{if(confirm('Сбросить историю повторений для всех карточек? Сами карточки останутся.')){state.reviews=[];state.cards.forEach(c=>{c.due=now();c.step=0;c.seen=0;c.correct=0;c.wrong=0;c.new=true});save();renderCard();renderStats()}};
+updateTop();renderCard();fillSetSelect();scheduleReminder();
+</script></body></html>
